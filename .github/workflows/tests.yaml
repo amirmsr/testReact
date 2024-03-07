@@ -24,10 +24,14 @@ jobs:
       - name: Install Dep
         run: yarn install
 
-      - name: Cypress Run
-        uses: cypress-io/github-action@v6
+      - name: Cypress run
+        uses: cypress-io/github-action@v3
         with:
+          project: ./viteTest
           browser: chrome
+          build: yarn build
+          start: yarn start
+          wait-on: "http://localhost:5173/"
 
       - name: Run tests
         run: npx cypress run

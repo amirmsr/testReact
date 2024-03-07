@@ -27,13 +27,12 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: yarn build
           browser: chrome
           start: yarn dev
 
       - name: Debug
         run: cat /etc/hosts
-        
+
       - name: Run tests 
         run: npx cypress run
 

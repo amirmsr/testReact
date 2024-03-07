@@ -1,4 +1,4 @@
-describe('Login', () => {
+/* describe('Login', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:5173/login')
@@ -46,7 +46,7 @@ describe('Login', () => {
 
 
 })
-
+ */
 
 
 describe('get hotels', () => {

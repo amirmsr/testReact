@@ -56,7 +56,7 @@ describe('get hotels', () => {
   });
 
   it('should fetch hotels', () => {
-    cy.get('[data-testid="cypress-hotels"]', { timeout: 10000 }).should('exist');
+    cy.get('[data-testid="cypress-hotels"]').should('exist');
 
   });
 

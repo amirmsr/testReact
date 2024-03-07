@@ -30,10 +30,13 @@ describe('Login', () => {
     cy.get('#password').type(validPassword);
     cy.get('button[type="submit"]').click();
 
+    cy.url().should('include', '/profil');
+    
     cy.window().then((win) => {
       const token = win.localStorage.getItem('token');
       expect(token).to.exist;
     });
+
 
     cy.url().should('include', '/profil');
   });

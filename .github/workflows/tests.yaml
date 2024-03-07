@@ -30,7 +30,7 @@ jobs:
           project: ./viteTest
           browser: chrome
           start: yarn dev
-          wait-on: "http://localhost:5173/"
+          wait-on: "http://localhost:5173/, http://localhost:8080/"
       
       - name: Run tests 
         run: npx cypress run

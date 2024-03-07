@@ -21,13 +21,13 @@ jobs:
         with:
           node-version: 18.17.1
 
-      - name: Cypress Run
-        uses: cypress-io/github-action@v6
-        with: 
-          browser: chrome
-
       - name: Install Dep
         run: yarn install
-        
+
+      - name: Cypress Run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+
       - name: Run tests
         run: npx cypress run

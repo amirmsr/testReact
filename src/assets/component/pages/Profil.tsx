@@ -26,7 +26,7 @@ export default function  Profil() {
       <div className="animate__animated animate__rotateIn">
       </div>           
       <div className="addVideo">
-          <Link to="/addVideo" style={{color: 'white', textDecoration: "none"}}>
+          <Link to="/addHostel" style={{color: 'white', textDecoration: "none"}}>
               <div style={{backgroundColor: "#260A63", borderRadius: '15px', padding: '30px', margin: '10px'}} className="animate__animated animate__bounceInLeft">
                   <FontAwesomeIcon icon={faSquarePlus} style={{fontSize: '30px', color: 'white'}}/>
                   <p>Add a hostel</p>

@@ -1,4 +1,4 @@
-/* describe('Login', () => {
+describe('Login', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:5173/login')
@@ -40,13 +40,12 @@
     });
 
 
-
     cy.url().should('include', '/profil');
   });
 
 
 })
- */
+
 
 
 describe('get hotels', () => {
@@ -56,10 +55,32 @@ describe('get hotels', () => {
   });
 
   it('should fetch hotels', () => {
-    cy.get('[data-testid="cypress-hotels"]').should('exist');
+    cy.get('[data-testid="cypress-hotels"]', { timeout: 10000 }).should('exist');
 
   });
 
 
 
 })
+
+
+describe('Book a Room', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:5173/hostel/book/1');
+  });
+
+  it('should successfully book a room', () => {
+    const checkIn = '10-09-2024';
+    const checkOut = '13-09-2024';
+    cy.get('#checkIn').type(checkIn);
+    cy.get('#checkOut').type(checkOut);
+
+    cy.get('button[type="submit"]').click();
+
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('reservation succed date : 2024-04-01 , 2024-04-05');
+    });
+
+  });
+
+});

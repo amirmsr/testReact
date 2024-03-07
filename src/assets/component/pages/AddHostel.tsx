@@ -12,7 +12,7 @@ export default function AddHostel() {
   const [data, setData] = useState({
     name: "",
     description: "",
-    location:"",
+    localisation:"",
     picture:""
   });
 
@@ -32,13 +32,14 @@ export default function AddHostel() {
         body: JSON.stringify(data),
       });      
 
-      const textResponse = await response.text();
-      console.log(textResponse);
+      const textResponse = await response.json();
+      console.log(textResponse)
       return textResponse
       
     },
     {
       onSuccess: () => {
+        alert(`succed to add hostel : ${data.name}`)
         navigate(`/`)
       },
       onError: () => {
@@ -74,8 +75,8 @@ export default function AddHostel() {
         </div>
         <br /><br />
         <div className="form-group">
-          <label htmlFor="Location" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Location</label>
-          <center><input  style={{width:'30%'}} className='form-control' type="text" id="location" name="location" placeholder="location" onChange={handleChange} /></center>
+          <label htmlFor="Location" style={{ color: '#1A4550', fontSize: '1.5rem' }}>localisation</label>
+          <center><input  style={{width:'30%'}} className='form-control' type="text" id="localisation" name="localisation" placeholder="localisation" onChange={handleChange} /></center>
         </div>
         <br /><br />
         <h2 style={{marginBottom: "20px"}}>Poster une image principal</h2>

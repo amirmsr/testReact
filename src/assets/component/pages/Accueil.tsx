@@ -14,7 +14,7 @@ function Accueil(){
     console.log(hostels);
 
     const handleBook = async  (hotelId: string)=>{
-        navigate(`/hotels/${hotelId}`)
+        navigate(`/hostel/book/${hotelId}`)
     }
 
     
@@ -43,11 +43,12 @@ return(
                                 <b style={{color: '#260A63'}}>user</b> 
                             </div>
                             <Link to={`/hostel/${hostel?.id}`} /* onClick={()=>handleVideoClick(video._id)} */ className="elementHeader" style={{cursor: "pointer", position: "relative", display: "block"}}>
+                            </Link>
                             <button onClick={()=>handleBook(hostel?.id)}  className='btnMain2 btn-block'>Book Now</button>
                             <br /><br />
                             <Link to={`/hostel/${hostel?.id}`}>More details</Link>
                             <br />
-                            </Link>
+
                            
                         </div>
                     </div>

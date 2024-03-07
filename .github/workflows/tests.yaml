@@ -22,4 +22,4 @@ jobs:
       - name: Install Dep
         run: yarn install
       - name: Run tests
-        run: npx cypress open
+        run: npx cypress run

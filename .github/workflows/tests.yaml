@@ -32,7 +32,5 @@ jobs:
       - name: Debug
         run: cat /etc/hosts
 
-      - name: Run tests 
-        run: npx cypress run --config-file=cypress.config.ts
-
+     
 

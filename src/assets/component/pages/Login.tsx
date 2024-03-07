@@ -27,14 +27,15 @@ export default function Login() {
         body: JSON.stringify(data),
       });      
 
-      const textResponse = await response.text();
-      console.log(textResponse);
-      return textResponse
+      const textResponse = await response.json();
+      console.log(textResponse.token);
+      const tokenFinal = textResponse.token
+      return tokenFinal
       
     },
     {
-      onSuccess: (textResponse) => {
-        const token = textResponse;
+      onSuccess: (tokenFinal) => {
+        const token = tokenFinal;
         console.log("token" + token);        
         localStorage.setItem("token", token);
         navigate(`/profil`)

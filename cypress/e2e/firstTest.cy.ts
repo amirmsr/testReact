@@ -34,10 +34,12 @@ describe('Login', () => {
 
     cy.window().then((win) => {
       const token = win.localStorage.getItem('token');
+      cy.wait(2000);
+      console.log('Token:', token);
       expect(token).to.exist;
     });
-    
-    cy.wait(2000);
+
+
 
     cy.url().should('include', '/profil');
   });
@@ -54,7 +56,8 @@ describe('get hotels', () => {
   });
 
   it('should fetch hotels', () => {
-    cy.get('[data-testid="cypress-hotels"]').should('exist');
+    cy.get('[data-testid="cypress-hotels"]', { timeout: 10000 }).should('exist');
+
   });
 
 

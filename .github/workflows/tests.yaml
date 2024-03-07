@@ -29,7 +29,6 @@ jobs:
         with:
           browser: chrome
           start: yarn dev
-
       - name: Debug
         run: cat /etc/hosts
 
